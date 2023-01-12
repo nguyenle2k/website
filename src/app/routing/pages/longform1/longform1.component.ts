@@ -7,4 +7,38 @@ import { Component } from '@angular/core';
 })
 export class Longform1Component {
 
+  titles =[
+    {title:'Number'},
+    {title:'Nation'},
+    {title:'Capital'},
+    {title:'Population (people)'},
+    {title:'GDP (USD)'},
+  ]
+
+  items =[
+    {
+      nation:'China',
+      capital:'"Pecking"', 
+      population:'21,333,000',
+      gdp:'1,935.2',
+    },
+    {
+      nation:'Indonesia',
+      capital:'Jakarta',
+      population:'',
+      gdp:'',
+    },
+    {
+      nation:'Singapore',
+      capital:'Singapore',
+      population:'',
+      gdp:'',
+    },
+    {
+      nation:'Sound-Korea',
+      capital:'Seun',
+      population:'',
+      gdp:'',
+    },
+  ]
 }
