@@ -1,19 +1,19 @@
 <section class="bg-sky-100">
   <div class="container mx-auto">
-    <div class="bg-green-300">
-      <div class="flex justify-center py-40">
+    <div class="bg-amber-100">
+      <div class="flex justify-center py-10">
         <div>
           <h1 class="text-5xl Fraunces-700-italic my-5">
             Nation Capital Infomation
           </h1>
-          <table class="text-2xl border-collapse border-2 border-black">
+          <table class="text-2xl bg-green-300 border border-black">
             <thead class="Fraunces-600">
-              <tr>
+              <tr class="bg-green-500">
                 <th *ngFor="let item of titles" class="border border-black">{{ item.title }}</th>
               </tr>
             </thead>
             <tbody class="Fraunces-200">
-              <tr *ngFor="let item of items; index as i" >
+              <tr *ngFor="let item of items; index as i" [ngClass]="{'bg-red-300': i%2 == 0 }">
                 <th class="border border-black">{{ i+1 }}</th>
                 <th class="border border-black">{{ item.nation }}</th>
                 <th class="border border-black">{{ item.capital }}</th>
@@ -26,4 +26,9 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- Slider -->
+<section>
+
 </section>
