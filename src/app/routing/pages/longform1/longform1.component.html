@@ -3,25 +3,27 @@
     <div class="bg-amber-100">
       <div class="flex justify-center py-10">
         <div>
-          <h1 class="text-5xl Fraunces-700-italic my-5">
+          <h1 class="text-5xl text-center Fraunces-700-italic my-5">
             Nation Capital Infomation
-          </h1
-          <table class="text-2xl bg-green-300 border border-black">
-            <thead class="Fraunces-600">
-              <tr class="bg-green-500">
-                <th *ngFor="let item of titles" class="border border-black">{{ item.title }}</th>
-              </tr>
-            </thead>
-            <tbody class="Fraunces-200">
-              <tr *ngFor="let item of items; index as i" [ngClass]="{'bg-red-300': i%2 == 0 }">
-                <th class="border border-black">{{ i+1 }}</th>
-                <th class="border border-black">{{ item.nation }}</th>
-                <th class="border border-black">{{ item.capital }}</th>
-                <th class="border border-black">{{ item.population }}</th>
-                <th class="border border-black">{{ item.gdp }}</th>
-              </tr>
-            </tbody>
-          </table>
+          </h1>
+          <div class="mx-2 overflow-auto">
+            <table class="text-2xl bg-green-300 border border-black">
+              <thead class="Fraunces-600">
+                <tr class="bg-green-500">
+                  <th *ngFor="let item of titles" class="border border-black px-6 py-4">{{ item.title }}</th>
+                </tr>
+              </thead>
+              <tbody class="Fraunces-200">
+                <tr *ngFor="let item of items; index as i" [ngClass]="{'bg-red-200': i%2 == 0 }">
+                  <th class="border border-black px-6 py-4">{{ i+1 }}</th>
+                  <th class="border border-black px-6 py-4">{{ item.nation }}</th>
+                  <th class="border border-black px-6 py-4">{{ item.capital }}</th>
+                  <th class="border border-black px-6 py-4">{{ item.population }}</th>
+                  <th class="border border-black px-6 py-4">{{ item.gdp }}</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
