@@ -40,5 +40,23 @@ export class Longform1Component {
       population:'',
       gdp:'',
     },
+    {
+      nation:'Sound-Korea',
+      capital:'Seun',
+      population:'',
+      gdp:'',
+    },
+    {
+      nation:'Sound-Korea',
+      capital:'Seun',
+      population:'',
+      gdp:'',
+    },
+    {
+      nation:'Sound-Korea',
+      capital:'Seun',
+      population:'',
+      gdp:'',
+    },
   ]
 }
