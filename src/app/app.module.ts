@@ -9,6 +9,7 @@ import { MainComponent } from './routing/component/main/main.component';
 import { PlaceholderComponent } from './routing/pages/placeholder/placeholder.component';
 import { Longform1Component } from './routing/pages/longform1/longform1.component';
 import { SwiperModule } from 'swiper/angular';
+import { OverviewComponent } from './routing/pages/overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SwiperModule } from 'swiper/angular';
     LongformComponent,
     MainComponent,
     PlaceholderComponent,
-    Longform1Component
+    Longform1Component,
+    OverviewComponent,
   ],
   imports: [
     BrowserModule,
