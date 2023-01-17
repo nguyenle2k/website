@@ -1,8 +1,11 @@
+<!-- *ngFor="let item of images" -->
 <!-- Slider -->
-<section class="container mx-auto">
-  <div>
-    <!-- Slider -->
-    <section class="container mx-auto my-2 lg:my-10 py-7 lg:py-14">
+<section class="container mx-auto my-2 lg:my-10 py-7 lg:py-14">
+  <swiper
+  [slidesPerView]="1"
+  [spaceBetween]="50"
+  [scrollbar]="{ draggable: true }">
+    <ng-template swiperSlide *ngFor="let item of images">
       <div class="mx_section grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8">
         <div class="pr-0 lg:pr-12 xl:pr-10 2xl:pr-28">
           <strong class="text-3xl text-orange-500"> We build for you </strong>
@@ -15,7 +18,7 @@
             App & Mobile Applications
           </h1>
           <p
-            class="md:text-lg lg:text-lg 2xl:text-xl text-justify text-indigo-700 text-opacity-75 font-normal my-5 md:my-10 lg:my-5 pb-5 md:pb-0"
+            class="md:text-lg text-justify text-indigo-700 text-opacity-75 font-normal my-5 md:my-10 lg:my-5 pb-5 md:pb-0"
           >
             We deliver
             <strong>high performance, trusted quality</strong>
@@ -25,30 +28,18 @@
           </p>
           <div class="text-center lg:text-left mt-4 2xl:mt-10">
             <button
-              class="text-sm lg:text-base 2xl:text-lg font-Inter font-semibold border-2 border-orange-500 bg-orange-500 hover:bg-white rounded-2xl lg:rounded-3xl text-white hover:text-orange-500 duration-300 px-3 md:px-4 lg:px-14 py-1 md:py-3 lg:py-3"
+              class="text-sm lg:text-base 2xl:text-lg font-Inter font-semibold border-2 border-orange-400 bg-orange-400 hover:bg-white rounded-2xl lg:rounded-3xl text-white hover:text-orange-400 duration-300 px-3 md:px-4 lg:px-14 py-1 md:py-3 lg:py-3"
             >
               Contact us, we response under 2 hours.
             </button>
           </div>
         </div>
-        <div>
-          <swiper
-            [slidesPerView]="1"
-            [spaceBetween]="1"
-            [navigation]="true"
-            [pagination]="{ clickable: true }"
-            [scrollbar]="{ draggable: true }"
-          >
-            <ng-template swiperSlide *ngFor="let item of images">
-              <div class="lg:pt-11 xl:pt-16 2xl:pt-0">
-                <img src="{{ item.img }}" alt="">
-              </div>
-            </ng-template>
-          </swiper>
+        <div class="lg:pt-11 xl:pt-16 2xl:pt-0">
+          <img src="{{ item.img }}" alt="" />
         </div>
       </div>
-    </section>
-  </div>
+    </ng-template>
+  </swiper>
 </section>
 
 <!-- sld -->

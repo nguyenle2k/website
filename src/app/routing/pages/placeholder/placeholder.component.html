@@ -1,0 +1,103 @@
+<!--<section class="bg-indigo-900 py-20">-->
+<!--    <div class="container mx-auto">-->
+<!--        <div *ngFor="let item of items" class="my-9">-->
+<!--            <h2 class="text-center text-4xl sm:text-5xl text-yellow-500 font-extrabold">-->
+<!--                {{ item.title1 }}-->
+<!--            </h2>-->
+<!--            <h2 class="text-center text-5xl sm:text-6xl text-white font-extrabold mt-4">-->
+<!--                {{ item.title2 }}-->
+<!--            </h2>-->
+<!--            <div class=" bg-pink-500 rounded-full h-1 w-9 mx-auto my-7"></div>-->
+<!--            <div *ngFor="let content of item.contents" class="px-6 sm:px-12 md:px-28 xl:px-52">-->
+<!--                <p class="text-xl text-white text-justify Fraunces-400 leading-8 mt-5">-->
+<!--                    {{ content.content1 }}-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            <div [ngClass]="{'px-4 sm:px-6 py-4': item.styles == 1, 'mx-1 2xl:mx-7 px-2 sm:px-4 md:px-28 xl:px-44 py-4': item.styles == 2}">-->
+<!--                <img src="{{ item.image }}" class="w-full rounded-2xl py-8" alt="img">-->
+<!--            </div>-->
+<!--            <div *ngFor="let content of item.contents" class="px-6 sm:px-12 md:px-28 xl:px-52">-->
+<!--                <p class="text-xl text-white text-justify Fraunces-400 leading-8 mt-5">-->
+<!--                    {{ content.content2 }}-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section
+  id="LONGFORM3"
+  class="bg-[url('assets/images/longform3/background.png')] bg-cover"
+>
+  <div class="container mx-auto">
+    <div class="pt-28 text-center">
+      <h1 class="Fraunces-600 text-5xl text-white">Longform</h1>
+      <div
+        class="text-white text-base flex justify-center mt-5 Source-Sans-Pro-400"
+      >
+        <a
+          [routerLink]="['/']"
+          class="after:content-['/'] after:ml-2 hover:text-green-400"
+          >Trang chủ</a
+        >
+        <a
+          [routerLink]="['/longform']"
+          class="after:content-['/'] mx-2 after:ml-2 hover:text-green-400"
+          >Tin mới</a
+        >
+        <p>Longform</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto mt-5">
+    <div
+      class="text-xl text-white exo-medium-italic font-light text-base HTMLcontent"
+      [innerHTML]="blogData?.htmlContent"
+    ></div>
+  </div>
+</section>
+
+
+<!-- slider -->
+<div class="w-full mt-6 pb-10 relative">
+    <swiper
+      [slidesPerView]="1"
+      [spaceBetween]="10"
+      [pagination]="true"
+      [direction]="'vertical'"
+      [autoplay]="{
+        delay: 3000,
+        disableOnInteraction: false
+      }"
+      class="h-[45vw] lg:h-[350px]"
+    >
+      <ng-template
+        swiperSlide
+        class="relative"
+        *ngFor="let item of listDataBlog.content"
+      >
+        <img
+          src="assets/images/home/icon-camera.png"
+          class="w-14 h-14 top-4 left-4 absolute"
+        />
+        <div class="absolute bottom-4 left-4 md:left-8 z-20">
+          <p class="text-xl text-green-400 Fraunces-700">
+            {{ formatDate(item?.createdOnDate, 'DD/MM/YYYY') }}
+          </p>
+          <h1
+            class="text-white text-lg md:text-3xl Fraunces-700 mt-4 md:w-4/5 hover:text-green-400 hover:cursor-pointer"
+            [routerLink]="[Category, item?.slug]"
+          >
+            {{ item.title }}
+          </h1>
+        </div>
+        <img
+          src="{{ item.thumbnailUrl }}"
+          class="h-full w-full object-fill"
+        />
+      </ng-template>
+    </swiper>
+    <div
+      class="bg-gray-300/30 w-full absolute bottom-8 lg:bottom-6 top-0 right-2 -left-2 -z-10 max-h-[370px]"
+    ></div>
+  </div>
