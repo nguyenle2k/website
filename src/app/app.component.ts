@@ -1,3 +1,4 @@
+
 import { Component, ViewEncapsulation } from '@angular/core';
 
 // import Swiper core and required modules
