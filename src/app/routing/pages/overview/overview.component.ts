@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./overview.component.less']
 })
 export class OverviewComponent {
+  images =[
+    {img:'./assets/images/overview/slider1.png'},
+    {img:'./assets/images/overview/slider1.png'},
+    {img:'./assets/images/overview/slider1.png'},
+    {img:'./assets/images/overview/slider1.png'},
+    {img:'./assets/images/overview/slider1.png'},
+    {img:'./assets/images/overview/slider1.png'},
+  ]
 
 }
