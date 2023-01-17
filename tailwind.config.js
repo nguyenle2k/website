@@ -6,12 +6,13 @@ module.exports = {
   theme: {
     extend: {
       container: {
-        padding: {
-          sm: '640px',
-          md: '789px',
-          lg: '1024px',
-          xl: '1220px',
-          '2xl': '1220px',
+        screens: {
+          xs: "640px",
+          sm: "768px",
+          md: "1024px",
+          lg: "1220px",
+          xl: "1220px", // 1536px
+          '2xl': "1220px", // 1536px
         }
       }
     },
