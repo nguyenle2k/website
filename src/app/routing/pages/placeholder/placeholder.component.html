@@ -51,8 +51,7 @@
   </div>
   <div class="container mx-auto mt-5">
     <div
-      class="text-xl text-white exo-medium-italic font-light text-base HTMLcontent"
-      [innerHTML]="blogData?.htmlContent"
+      class="text-xl text-white exo-medium-italic font-light"
     ></div>
   </div>
 </section>
@@ -74,7 +73,7 @@
       <ng-template
         swiperSlide
         class="relative"
-        *ngFor="let item of listDataBlog.content"
+        
       >
         <img
           src="assets/images/home/icon-camera.png"
@@ -82,17 +81,17 @@
         />
         <div class="absolute bottom-4 left-4 md:left-8 z-20">
           <p class="text-xl text-green-400 Fraunces-700">
-            {{ formatDate(item?.createdOnDate, 'DD/MM/YYYY') }}
+           
           </p>
           <h1
             class="text-white text-lg md:text-3xl Fraunces-700 mt-4 md:w-4/5 hover:text-green-400 hover:cursor-pointer"
-            [routerLink]="[Category, item?.slug]"
+            
           >
-            {{ item.title }}
+            
           </h1>
         </div>
         <img
-          src="{{ item.thumbnailUrl }}"
+          src=""
           class="h-full w-full object-fill"
         />
       </ng-template>

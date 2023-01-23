@@ -6,24 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./placeholder.component.less']
 })
 export class PlaceholderComponent {
-
-}
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PostService } from '@services/api';
-import { ActivatedRoute, Router } from '@angular/router';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
-
-@Component({
-  selector: 'app-longform4',
-  templateUrl: './longform4.component.html',
-  styleUrls: ['./longform4.component.less'],
-  encapsulation: ViewEncapsulation.None,
-})
-export class Longform4Component implements OnInit {
-  public blogData: any;
-  private subRouter$!: Subscription;
-  public valuelanguage: any;
   items = [
     {
       styles: 1,
@@ -108,44 +90,5 @@ export class Longform4Component implements OnInit {
       ],
     },
   ];
-
-  constructor(
-    private service: PostService,
-    protected route: ActivatedRoute,
-    protected translate: TranslateService,
-    protected router: Router,
-  ) {}
-
-  ngOnInit(): void {
-    const { slug } = this.route.snapshot.params;
-    this.getDetailBySlug(slug);
-    this.subRouter$ = this.translate.onDefaultLangChange.subscribe(
-      (event: LangChangeEvent) => {
-        this.valuelanguage = event.lang;
-        let slugg = '';
-        if (event.lang == 'en') {
-          var arren = this.blogData?.slugTranslations.filter((item: any) => {
-            return item?.language == 'en';
-          });
-          slugg = arren[0]?.slug;
-        }
-        if (event.lang == 'vn') {
-          var arren = this.blogData?.slugTranslations.filter((item: any) => {
-            return item?.language == 'vn';
-          });
-          slugg = arren[0]?.slug;
-        }
-        setTimeout(() => {
-          this.router.navigate(['longform', slugg.toString()]);
-          this.getDetailBySlug(slugg);
-        }, 300);
-      },
-    );
-  }
-
-  getDetailBySlug(slug: string) {
-    this.service.getBySlug(slug).subscribe((res: any) => {
-      this.blogData = res.data;
-    });
-  }
 }
+  
