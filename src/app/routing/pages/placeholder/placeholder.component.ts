@@ -13,7 +13,8 @@ export class PlaceholderComponent {
 
   constructor(private common: CommonService) {}
 
-  ngOninit(): void {
+  public ngOnInit(): void {
+    console.log('HomeComponent ngOnInit = ', this.common.counter);
     this.counter = this.common.counter;
     this.counterBinhPhuong = this.common.binhPhuong(this.counter)
     this.common.counter++;

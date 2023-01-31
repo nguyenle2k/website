@@ -55,9 +55,9 @@ export class HomeComponent {
 
   constructor(private common: CommonService) {}
 
-  public ngOnInit(): void {
-    console.log('fruits2 = ', this.fruits2);
-  }
+  // public ngOnInit(): void {
+  //   console.log('fruits2 = ', this.fruits2);
+  // }
 
   public changeCity(event: any): void {
     const city = event?.target.value;
@@ -76,9 +76,10 @@ export class HomeComponent {
     this.districts = this.cities.find(data => data.city === city)?.district || [];
   } 
 
-  ngOninit(): void {
+  public ngOnInit(): void {
+    console.log('PlaceholderComponent ngOnInit = ', this.common.counter);
     this.counter = this.common.counter;
-    this.counterBinhPhuong = this.common.binhPhuong(this.counter)
+    this.counterBinhPhuong = this.common.binhPhuong(this.counter);
     this.common.counter++;
   }
 }
