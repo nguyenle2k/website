@@ -36,7 +36,7 @@
             [slidesPerView]="1"
             [spaceBetween]="1"
             [scrollbar]="{ draggable: true }"
-            [autoplay]=""
+            [autoplay]="{ delay: 5000 }"
           >
             <ng-template swiperSlide *ngFor="let item of images">
               <div class="lg:pt-11 xl:pt-16 2xl:pt-0">
