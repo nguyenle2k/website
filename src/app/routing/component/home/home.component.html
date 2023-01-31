@@ -1,0 +1,85 @@
+<div class="flex justify-center Fraunces-400 mx-12 my-20">
+  <div>
+    <table class="border-2 border-black bg-red-50">
+      <tr class="bg-sky-200">
+        <th class="text-xl border-2 border-black px-6 py-2">#</th>
+        <th class="text-xl border-2 border-black px-6 py-2">Name</th>
+        <th class="text-xl border-2 border-black px-2 py-2">Price ($)</th>
+        <th class="text-xl border-2 border-black px-2 py-2">Discount</th>
+      </tr>
+      <tr *ngFor="let item of fruits2; let i = index">
+        <td class="border-2 border-black text-center px-2 py-1">{{ i + 1 }}</td>
+        <td class="min-w-max border-2 border-black px-4 py-1">
+          {{ item.name }}
+        </td>
+        <td class="border-2 border-black text-right px-2 py-1">
+          <span [ngClass]="{ 'text-red-600': item.price < 0 }">{{
+            item.price | currency
+          }}</span>
+        </td>
+        <td class="border-2 border-black text-center px-2 min-h-max">
+          <span *ngIf="item.discount"
+            ><i class="las la-check text-2xl text-green-500"></i
+          ></span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="my-10">
+      <label for="provine">Tên tỉnh thành:</label>
+      <select
+        id="city"
+        (change)="changeCity($event)"
+        class="border-2 border-green-400 outline-none rounded-md bg-slate-100 p-1"
+      >
+        <option *ngFor="let item of cities" value="{{ item.city }}">
+          {{ item.city }}
+        </option>
+      </select>
+      <br>
+      <label for="city">Thành phố / Huyện:</label>
+      <select
+        id=""
+        class="border-2 border-green-400 outline-none rounded-md bg-slate-100 p-1"
+      >
+        <option *ngFor="let item of districts" value="{{ item }}">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- <h1 class="text-lg Fraunces-600">List of Fruits:</h1>
+  <div *ngFor="let item of fruits; let i = index">
+    <li class="list-none">{{ i + 1 }}. {{ item }}</li>
+  </div> -->
+<!-- <div class="Fraunces-400 mx-12 my-20">
+  <h2>Your name: {{ name }}</h2>
+  <h2>Your age: {{ age }}</h2>
+  <input
+    type="text"
+    [(ngModel)]="age"
+    class="border border-sky-400 bg-sky-50 px-2"
+  />
+  <br>
+  <button (click)="resetAge()" class="border border-sky-400 bg-sky-50 px-1">
+    Reset your age
+  </button>
+  <br>
+  <div *ngIf="age <= 18; then young; else old"></div>
+  <ng-template #young>You're too young!</ng-template>
+  <ng-template #old>You're old enough!</ng-template>
+</div> -->
+
+<!-- Nhaps -->
+<!-- <button (click)="resetName()" class="border border-sky-400 bg-sky-50 px-1">Reset your name</button> -->
+
+<!-- <div>
+    <input [value]="name" [title]="'This is' + name"  class="border border-black"/>
+  </div> -->
+
+<!-- <h2 *ngIf="age > 18">You're old enough!</h2>
+  <h2 *ngIf="age <= 18">You aren't old enough!</h2> -->
+
+<!-- <h2>Your age: {{ age }}</h2> -->
