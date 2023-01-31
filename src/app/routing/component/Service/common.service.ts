@@ -6,9 +6,11 @@ import { Injectable } from '@angular/core';
 export class CommonService {
   public counter = 0;
    
+  
+  constructor() { }
+  
   public binhPhuong(n: number): number {
     return n * n;
   }
-
-  constructor() { }
 }
+
