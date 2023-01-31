@@ -11,6 +11,8 @@ import { OverviewComponent } from './routing/pages/overview/overview.component';
 import { SwiperModule } from 'swiper/angular';
 import { FormsModule } from '@angular/forms';
 import { PlaceholderComponent } from './routing/pages/placeholder/placeholder.component';
+import { PagenotfoundComponent } from './routing/component/pagenotfound/pagenotfound.component';
+import { HighlightDirective } from './routing/component/Directives/highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { PlaceholderComponent } from './routing/pages/placeholder/placeholder.co
     PlaceholderComponent,
     Longform1Component,
     OverviewComponent,
+    PagenotfoundComponent,
+    HighlightDirective,
 
   ],
   imports: [

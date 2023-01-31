@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from '../Service/common.service';
 
 @Component({
   selector: 'app-home',
@@ -49,8 +50,10 @@ export class HomeComponent {
       ]
     },
   ]
+  public counter = 0
+  public counterBinhPhuong = 0
 
-  constructor () {}  
+  constructor(private common: CommonService) {}
 
   public ngOnInit(): void {
     console.log('fruits2 = ', this.fruits2);
@@ -72,4 +75,10 @@ export class HomeComponent {
     // Cach 2:
     this.districts = this.cities.find(data => data.city === city)?.district || [];
   } 
+
+  ngOninit(): void {
+    this.counter = this.common.counter;
+    this.counterBinhPhuong = this.common.binhPhuong(this.counter)
+    this.common.counter++;
+  }
 }
