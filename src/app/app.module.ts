@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { PlaceholderComponent } from './placeholder/placeholder.component';
+
 import { HomeComponent } from './routing/component/home/home.component';
 import { FooterComponent } from './routing/component/footer/footer.component';
 import { LongformComponent } from './routing/pages/longform/longform.component';
@@ -15,6 +18,9 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
+
+    PlaceholderComponent
+
     HomeComponent,
     FooterComponent,
     LongformComponent,
@@ -22,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     PlaceholderComponent,
     Longform1Component,
     OverviewComponent,
+
   ],
   imports: [
     BrowserModule,
