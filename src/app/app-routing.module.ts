@@ -7,6 +7,7 @@ import { MainComponent } from './routing/component/main/main.component';
 import { PlaceholderComponent } from './routing/pages/placeholder/placeholder.component';
 import { Longform1Component } from './routing/pages/longform1/longform1.component';
 import { OverviewComponent } from './routing/pages/overview/overview.component';
+import { PagenotfoundComponent } from './routing/component/pagenotfound/pagenotfound.component';
 const routes: Routes = [
   { path: '', 
   component: MainComponent,
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'footer', component: FooterComponent},
     { path: 'longform', component: LongformComponent},
     { path: 'longform1', component: Longform1Component},
+    { path: '**', component: PagenotfoundComponent},
   ]
   }
 ];
