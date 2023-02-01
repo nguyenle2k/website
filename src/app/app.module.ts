@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { PlaceholderComponent } from './routing/pages/placeholder/placeholder.component';
 import { PagenotfoundComponent } from './routing/component/pagenotfound/pagenotfound.component';
 import { HighlightDirective } from './routing/component/Directives/highlight.directive';
+import { TemplateDrivenFormComponent } from './routing/component/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './routing/component/reactive-form/reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +28,16 @@ import { HighlightDirective } from './routing/component/Directives/highlight.dir
     OverviewComponent,
     PagenotfoundComponent,
     HighlightDirective,
+    TemplateDrivenFormComponent,
+    ReactiveFormComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

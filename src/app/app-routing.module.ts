@@ -8,11 +8,15 @@ import { PlaceholderComponent } from './routing/pages/placeholder/placeholder.co
 import { Longform1Component } from './routing/pages/longform1/longform1.component';
 import { OverviewComponent } from './routing/pages/overview/overview.component';
 import { PagenotfoundComponent } from './routing/component/pagenotfound/pagenotfound.component';
+import { TemplateDrivenFormComponent } from './routing/component/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './routing/component/reactive-form/reactive-form.component';
 const routes: Routes = [
   { path: '', 
   component: MainComponent,
   children: [
     { path: '', component: HomeComponent},
+    { path: 'reactiveform', component: ReactiveFormComponent},
+    { path: 'templateform', component: TemplateDrivenFormComponent},
     { path: 'overview', component: OverviewComponent},
     { path: 'placeholder', component: PlaceholderComponent},
     { path: 'home', component: HomeComponent},
