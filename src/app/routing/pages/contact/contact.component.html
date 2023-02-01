@@ -1,16 +1,64 @@
-<section class="bg-url('/assets/images/contact/worldmap.png')">
+<section
+  class="bg-[url('/assets/images/contact/worldmap.png')] bg-cover bg-no-repeat bg-center my-8 py-44"
+>
   <div class="container mx-auto">
-    <div class="mx-12 text-center">
-      <h3 class="text-4xl text-violet-900 font-black">Having an idea? Tell us and immediately start</h3>
-      <p class="text-slate-600 font-medium">
-        Send us an email to
-        <a
-          href="mailto:geneat.soft@gmail.com"
-          class="text-indigo-800 hover:text-indigo-600"
-          >geneat.soft@gmail.com</a
+    <div class="mx-12">
+      <div class="text-center">
+        <h3 class="text-4xl text-violet-900 font-black mb-8">
+          Having an idea? Tell us and immediately start
+        </h3>
+        <p class="text-lg text-slate-500 font-medium">
+          Send us an email to
+          <a
+            href="mailto:geneat.soft@gmail.com"
+            class="text-indigo-800 hover:text-indigo-600"
+            >geneat.soft@gmail.com</a
+          >
+          or fill this form, we will reply you within 1 hour
+        </p>
+      </div>
+      <!-- Form -->
+      <div class="flex justify-center my-10">
+        <form
+          [formGroup]="contactData"
+          (ngSubmit)="(updateContact)"
+          class="bg-white border border-slate-400 shadow-2xl rounded-xl px-8 py-4"
         >
-        or fill this form, we will reply you within 1 hour Your contact:
-      </p>
+          <!-- label 1 -->
+          <label for="" class="text-lg text-slate-500  Fraunces-600"
+            >Your contact:</label
+          >
+          <br />
+          <input
+            type="text"
+            id="your-contact"
+            formControlName="contact"
+            class="border border-black bg-slate-50 rounded-md w-full mb-4 px-2 py-1"
+          />
+          <br />
+          <!-- label 2 -->
+          <label for="" class="text-lg text-slate-500 Fraunces-600"
+            >Your great idea:</label
+          >
+          <br />
+          <textarea
+            formControlName="idea"
+            id="your-idea"
+            cols="30"
+            rows="6"
+            class="border border-black bg-slate-50 rounded-md mb-4 px-2 py-1"
+          ></textarea>
+          <br />
+
+          <button
+            type="button"
+            (click)="updateContact()"
+            class="bg-indigo-600 hover:bg-indigo-800 text-white uppercase Fraunces-600 rounded-md w-full mt-2 px-16 py-2"
+          >
+            Send Contact
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </section>

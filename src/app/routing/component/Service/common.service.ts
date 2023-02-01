@@ -14,7 +14,7 @@ export class CommonService {
   }
 
   public submidData(data: any): void {
-    console.log('Send data to server. Data = ', data)
+    console.log('Send data to server. Data = ', data);
   }
 }
 
