@@ -39,7 +39,7 @@ import { ContactComponent } from './routing/pages/contact/contact.component';
     AppRoutingModule,
     SwiperModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
