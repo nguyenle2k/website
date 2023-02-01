@@ -16,6 +16,7 @@ import { HighlightDirective } from './routing/component/Directives/highlight.dir
 import { TemplateDrivenFormComponent } from './routing/component/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './routing/component/reactive-form/reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './routing/pages/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HighlightDirective,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
+    ContactComponent,
 
   ],
   imports: [
