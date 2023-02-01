@@ -1,0 +1,22 @@
+<div class="container mx-auto my-10">
+  <div class="flex justify-center">
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()" class="Fraunces-600">
+      Name:
+      <!-- reactive-form -->
+      <input type="text" formControlName="name" class="border-2 border-black pl-1"/>
+      Age:
+      <input type="text" formControlName="age" class="border-2 border-black pl-1"/>
+    
+
+      <!-- template-driven-form -->
+      <!-- <input
+              type="text"
+              [(ngModel)]="name"
+              [ngModelOptions]="{ standalone: true }"
+              class="border-2 border-black"
+      /> -->
+      <!-- <button (click)="submitForm()" class="bg-sky-100 border ml-3 p-1 ">Submit</button> -->
+      <button type="submit" class="bg-sky-100 border ml-3 p-1">Submit 2</button>
+    </form>
+  </div>
+</div>

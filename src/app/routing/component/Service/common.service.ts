@@ -12,5 +12,9 @@ export class CommonService {
   public binhPhuong(n: number): number {
     return n * n;
   }
+
+  public submidData(data: any): void {
+    console.log('Send data to server. Data = ', data)
+  }
 }
 
