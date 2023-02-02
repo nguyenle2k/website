@@ -8,14 +8,16 @@ import { HttpServerService } from '../Service/http-server.service';
 })
 export class GetDataComponent {
 
+  public info: string ='';
+
   constructor(private httpServerService: HttpServerService) {}
 
   public ngOnInit(): void {
-    this.httpServerService.getComments().subscribe(data => {
+    this.httpServerService.getComments('profile').subscribe(data => {
       console.log('data', data)
     })
 
-    this.httpServerService.getRandomUser(10).subscribe(data => {
+    this.httpServerService.getRandomUser(3).subscribe(data => {
       console.log('user', data.results)
     })
   }

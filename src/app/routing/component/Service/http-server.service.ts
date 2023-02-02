@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpServerService {
-  private REST_API_SERVER = 'http://localhost:3000';
+  private REST_API_SERVER = 'http://localhost:3000/';
   private REST_API_RANDOM_USER = 'https://randomuser.me/api/?results=';
 
   private httpOptions = {
@@ -17,8 +17,9 @@ export class HttpServerService {
   };
   constructor(private httpClient: HttpClient) {}
 
-  public getComments(): Observable<any> {
-    const url = `${this.REST_API_SERVER}/comments`;
+  public getComments(word: string =''): Observable<any> {
+    const url = `${this.REST_API_SERVER}` + word ;
+    console.log(url);
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 

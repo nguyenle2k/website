@@ -10,6 +10,11 @@ export class PlaceholderComponent {
   // public pages = 'home'; (ngSwitch)
   public counter = 0
   public counterBinhPhuong = 0
+  public ham(){
+    for (let i = 0; i < 5; i++) {
+      console.log ("Count:", i);
+    }
+  }
 
   constructor(private common: CommonService) {}
 
