@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class HttpServerService {
   private REST_API_SERVER = 'http://localhost:3000';
+  private REST_API_RANDOM_USER = 'https://randomuser.me/api/?results=';
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -17,6 +19,12 @@ export class HttpServerService {
 
   public getComments(): Observable<any> {
     const url = `${this.REST_API_SERVER}/comments`;
+    return this.httpClient.get<any>(url, this.httpOptions);
+  }
+
+  public getRandomUser(user:number = 1): Observable<any> {
+    const url = `${this.REST_API_RANDOM_USER}` + user;
+    console.log(url);
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 }

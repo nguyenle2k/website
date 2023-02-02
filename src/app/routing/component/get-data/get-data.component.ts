@@ -14,5 +14,9 @@ export class GetDataComponent {
     this.httpServerService.getComments().subscribe(data => {
       console.log('data', data)
     })
+
+    this.httpServerService.getRandomUser(10).subscribe(data => {
+      console.log('user', data.results)
+    })
   }
 }
