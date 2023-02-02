@@ -11,11 +11,13 @@ import { PagenotfoundComponent } from './routing/component/pagenotfound/pagenotf
 import { TemplateDrivenFormComponent } from './routing/component/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './routing/component/reactive-form/reactive-form.component';
 import { ContactComponent } from './routing/pages/contact/contact.component';
+import { GetDataComponent } from './routing/component/get-data/get-data.component';
 const routes: Routes = [
   { path: '', 
   component: MainComponent,
   children: [
     { path: '', component: HomeComponent},
+    { path: 'getdata', component: GetDataComponent},
     { path: 'contact', component: ContactComponent},
     { path: 'reactiveform', component: ReactiveFormComponent},
     { path: 'templateform', component: TemplateDrivenFormComponent},
